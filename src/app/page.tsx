@@ -3,8 +3,6 @@ import { TodoList } from "@components/shared/todos/todo-list"
 import { ToggleTheme } from "@components/shared/toggle-theme"
 import { type Metadata } from "next"
 
-export const runtime = "edge"
-
 export const metadata: Metadata = {
   title: "Home",
   description: "hey there, this is a Home Page",

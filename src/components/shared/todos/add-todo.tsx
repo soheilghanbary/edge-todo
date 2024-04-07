@@ -35,8 +35,8 @@ export const AddTodo = () => {
         {...register("text")}
       />
       <Button disabled={isPending}>
-        <Icons.plus className="mr-2 size-4" />
         Save
+        <Icons.plus className="ml-2 size-4" />
       </Button>
       <ClearTodo />
     </form>

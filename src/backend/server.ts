@@ -1,4 +1,4 @@
-import { asc, desc, eq } from "drizzle-orm"
+import { desc, eq } from "drizzle-orm"
 import { Hono } from "hono"
 import { db } from "./db"
 import { TodoTable } from "./db/schema"

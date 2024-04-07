@@ -39,7 +39,7 @@ const TodoItem = (todo: any) => {
         <h2 className={cn("font-medium", { "line-through": todo.done })}>
           {todo.text}
         </h2>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-xs text-muted-foreground md:text-sm">
           {getCurrentDate(todo.createdAt)}
         </p>
       </div>
