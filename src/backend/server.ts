@@ -21,7 +21,7 @@ app.post("/todos", async (c) => {
     .insert(TodoTable)
     .values({ text })
     .returning({ id: TodoTable.id, text: TodoTable.text, done: TodoTable.done })
-  return c.json(newTodo)
+  return c.json(newTodo[0])
 })
 
 // delete todo by id

@@ -35,12 +35,9 @@ const useAddTodo = () => {
       })
       return res.json()
     },
-    onMutate(text: string) {
+    onSuccess(res) {
       queryClient.setQueryData(["todos"], (oldTodos: any[]) => {
-        return [
-          { id: Math.floor(Math.random() * 1000), text, done: false },
-          ...oldTodos,
-        ]
+        return [res, ...oldTodos]
       })
       toast.success("Todo added successfully")
     },

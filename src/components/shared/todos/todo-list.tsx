@@ -28,8 +28,8 @@ export const TodoList = () => {
 }
 
 const TodoItem = (todo: any) => {
-  const { mutateAsync: deleteMutate, isPending } = useDeleteTodo()
-  const { mutateAsync: doneMKutate, isPending: isDonePending } = useDoneTodo()
+  const { mutate: deleteMutate, isPending } = useDeleteTodo()
+  const { mutate: doneMKutate, isPending: isDonePending } = useDoneTodo()
   return (
     <div
       key={todo.id}
@@ -48,9 +48,7 @@ const TodoItem = (todo: any) => {
         </p>
       </div>
       <Button
-        onClick={async () =>
-          await doneMKutate({ id: todo.id, done: !todo.done })
-        }
+        onClick={() => doneMKutate({ id: todo.id, done: !todo.done })}
         variant={"outline"}
         size={"icon"}
       >
