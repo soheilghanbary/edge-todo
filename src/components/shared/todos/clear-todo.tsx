@@ -1,9 +1,11 @@
+import { useFilterState } from "@lib/hooks/use-filter"
 import { useClearTodo, useTodos } from "@lib/hooks/use-todos"
 import { Button } from "@ui/button"
 import { Skeleton } from "@ui/skeleton"
 
 export const ClearTodo = () => {
-  const { data, isLoading } = useTodos()
+  const { filter } = useFilterState()
+  const { data, isLoading } = useTodos(filter)
   const { mutateAsync: clearMutate, isPending } = useClearTodo()
   const onClear = async () => {
     await clearMutate()
