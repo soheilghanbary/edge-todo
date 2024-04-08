@@ -27,7 +27,10 @@ export const AddTodo = () => {
     reset()
   }
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex items-end gap-2">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex items-end gap-2 rounded-md border bg-background p-4 shadow-sm"
+    >
       <TextField
         label="Todo"
         placeholder="Add a todo"
@@ -38,7 +41,6 @@ export const AddTodo = () => {
         Save
         <Icons.plus className="ml-2 size-4" />
       </Button>
-      <ClearTodo />
     </form>
   )
 }

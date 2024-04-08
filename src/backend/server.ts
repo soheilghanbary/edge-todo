@@ -7,11 +7,21 @@ export const app = new Hono().basePath("/api")
 
 // get all todos
 app.get("/todos", async (c) => {
-  const todos = await db
-    .select()
-    .from(TodoTable)
-    .orderBy(desc(TodoTable.createdAt))
-  return c.json(todos)
+  const { filter } = c.req.query()
+  switch (filter) {
+    case "all":
+      return c.json(
+        await db.select().from(TodoTable).orderBy(desc(TodoTable.createdAt))
+      )
+    case "done":
+      return c.json(
+        await db.select().from(TodoTable).where(eq(TodoTable.done, true))
+      )
+    case "undone":
+      return c.json(
+        await db.select().from(TodoTable).where(eq(TodoTable.done, false))
+      )
+  }
 })
 
 // create new todo

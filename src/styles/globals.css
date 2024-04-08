@@ -55,7 +55,7 @@
     @apply border-border scroll-smooth select-none;
   }
   body {
-    @apply antialiased text-foreground bg-background;
+    @apply antialiased text-foreground dark:bg-background bg-zinc-50;
   }
 }
 
