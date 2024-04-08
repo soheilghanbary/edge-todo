@@ -36,7 +36,11 @@ const TodoItem = (todo: any) => {
       className="flex items-center justify-between gap-2 rounded-md border p-4 shadow-sm"
     >
       <div className="grow space-y-0.5">
-        <h2 className={cn("font-medium", { "line-through": todo.done })}>
+        <h2
+          className={cn("font-medium", {
+            "text-muted-foreground line-through": todo.done,
+          })}
+        >
           {todo.text}
         </h2>
         <p className="text-xs text-muted-foreground md:text-sm">
@@ -47,7 +51,6 @@ const TodoItem = (todo: any) => {
         onClick={async () =>
           await doneMKutate({ id: todo.id, done: !todo.done })
         }
-        disabled={isDonePending}
         variant={"outline"}
         size={"icon"}
       >

@@ -114,6 +114,9 @@ const useDoneTodo = () => {
         })
       })
     },
+    onSuccess(res) {
+      toast(res.msg)
+    },
   })
 }
 

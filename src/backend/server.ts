@@ -35,7 +35,7 @@ app.delete("/todos/:id", async (c) => {
 
 // clear all todos
 app.delete("/todos", async (c) => {
-  const deleted = await db.delete(TodoTable).where(eq(TodoTable.done, false))
+  const deleted = await db.delete(TodoTable)
   return c.json({ msg: "todos has been cleared" })
 })
 
@@ -48,5 +48,5 @@ app.patch("/todos/:id", async (c) => {
     .set({ done })
     .where(eq(TodoTable.id, parseInt(id)))
     .returning({ id: TodoTable.id, text: TodoTable.text, done: TodoTable.done })
-  return c.json(updated)
+  return c.json({ msg: "todo was updated" })
 })
