@@ -32,7 +32,7 @@ export const TodoList = () => {
     <section className="rounded-md border bg-background p-4 shadow-sm">
       <div className="flex items-center justify-between gap-4">
         <div>
-          <h2 className="font-medium">Todo List</h2>
+          <h2 className="font-medium">Todo List (Drizzle & Hono)</h2>
           <p className="text-xs text-muted-foreground">{data?.length} Todos</p>
         </div>
         <FilterTodo />
